@@ -40,10 +40,10 @@ def watch(update, context):
 
 
 mirror_handler = CommandHandler(BotCommands.WatchCommand, watch,
-                                pass_args=True,
-                                filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
+                                pass_args=True)
+                                
 tar_mirror_handler = CommandHandler(BotCommands.TarWatchCommand, watchTar,
-                                    pass_args=True,
-                                    filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
+                                    pass_args=True)
+                                    
 dispatcher.add_handler(mirror_handler)
 dispatcher.add_handler(tar_mirror_handler)
