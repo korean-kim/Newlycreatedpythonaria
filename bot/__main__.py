@@ -83,8 +83,7 @@ def bot_help(update, context):
 
 /{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
 
-Watch video - https://youtu.be/07Pj9YLdpM4
-'''
+More @HB4All_Bot'''
     sendMessage(help_string, context.bot, update)
 
 
@@ -97,14 +96,13 @@ def main():
         restart_message.edit_text("Restarted Successfully!")
         remove('restart.pickle')
 
-    start_handler = CommandHandler(BotCommands.StartCommand, start,
-                                   filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
-    ping_handler = CommandHandler(BotCommands.PingCommand, ping,
-                                  filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
+    start_handler = CommandHandler(BotCommands.StartCommand, start)
+    ping_handler = CommandHandler(BotCommands.PingCommand, ping)
+                                 
     restart_handler = CommandHandler(BotCommands.RestartCommand, restart,
                                      filters=CustomFilters.owner_filter)
     help_handler = CommandHandler(BotCommands.HelpCommand,
-                                  bot_help, filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
+                                  bot_help)
     stats_handler = CommandHandler(BotCommands.StatsCommand,
                                    stats, filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
     log_handler = CommandHandler(BotCommands.LogCommand, log, filters=CustomFilters.owner_filter)
