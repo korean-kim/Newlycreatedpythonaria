@@ -60,10 +60,10 @@ def unauthorize(update,context):
     sendMessage(msg, context.bot, update)
 
 
-authorize_handler = CommandHandler(command=BotCommands.AuthorizeCommand, callback=authorize,
-                                   filters=CustomFilters.owner_filter & Filters.group)
-unauthorize_handler = CommandHandler(command=BotCommands.UnAuthorizeCommand, callback=unauthorize,
-                                     filters=CustomFilters.owner_filter & Filters.group)
+authorize_handler = CommandHandler(command=BotCommands.AuthorizeCommand, callback=authorize)
+                                   
+unauthorize_handler = CommandHandler(command=BotCommands.UnAuthorizeCommand, callback=unauthorize)
+                                     
 dispatcher.add_handler(authorize_handler)
 dispatcher.add_handler(unauthorize_handler)
 
