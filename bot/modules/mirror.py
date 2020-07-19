@@ -203,9 +203,7 @@ def tar_mirror(update, context):
     _mirror(context.bot, update, True)
 
 
-mirror_handler = CommandHandler(BotCommands.MirrorCommand, mirror,
-                                filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
-tar_mirror_handler = CommandHandler(BotCommands.TarMirrorCommand, tar_mirror,
-                                    filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
+mirror_handler = CommandHandler(BotCommands.MirrorCommand, mirror,)
+tar_mirror_handler = CommandHandler(BotCommands.TarMirrorCommand, tar_mirror)
 dispatcher.add_handler(mirror_handler)
 dispatcher.add_handler(tar_mirror_handler)
