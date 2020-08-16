@@ -31,8 +31,8 @@ def stats(update, context):
 
 @run_async
 def start(update, context):
-    sendMessage("This is a bot which can mirror all your links to Google drive!\n"
-                "Type /help to get a list of available commands", context.bot, update)
+    sendMessage("I Am Gdrive Uploader I Can Upload TG File,Youtube Link And Direct Link!\n"
+                "Type /help To Get A List Of Available Commands", context.bot, update)
 
 
 @run_async
@@ -61,27 +61,29 @@ def log(update, context):
 @run_async
 def bot_help(update, context):
     help_string = f'''
-/{BotCommands.HelpCommand}: To get this message
+/{BotCommands.HelpCommand}: To Get This Message
 
-/{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to google drive
+/{BotCommands.MirrorCommand} [Download Link]: Start Mirroring The link to google drive
 
-/{BotCommands.TarMirrorCommand} [download_url][magnet_link]: start mirroring and upload the archived (.tar) version of the download
+/{BotCommands.MirrorCommand} : Reply To Telegram File
 
-/{BotCommands.WatchCommand} [youtube-dl supported link]: Mirror through youtube-dl 
+/{BotCommands.TarMirrorCommand} [download_url]: start mirroring and upload the archived (.tar) version of the download
 
-/{BotCommands.TarWatchCommand} [youtube-dl supported link]: Mirror through youtube-dl and tar before uploading
+/{BotCommands.TarMirrorCommand}: Reply To Telegram File 2 Tar File
+
+/{BotCommands.WatchCommand} [Youtube link]: Upload To Gdrive 
+
+/{BotCommands.TarWatchCommand} [Youtube link]: Upload To Gdrive As Tar File
 
 /{BotCommands.CancelMirror} : Reply to the message by which the download was initiated and that download will be cancelled
-
-/{BotCommands.StatusCommand}: Shows a status of all the downloads
 
 /{BotCommands.ListCommand} [search term]: Searches the search term in the Google drive, if found replies with the link
 
 /{BotCommands.StatsCommand}: Show Stats of the machine the bot is hosted on
 
-/{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot (Can only be invoked by owner of the bot)
+Join Team Drive To Access Gdrive Link:https://telegra.ph/How-To-Join-In-HB4All-Team-Drive-05-19
 
-/{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
+Help or Error Contact @HB4All1_Bot
 
 More @HB4All_Bot'''
     sendMessage(help_string, context.bot, update)
